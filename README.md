@@ -51,56 +51,92 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Nomes dos que participaram na avaliação]
     [Grupo02]: [Nomes dos que participaram na avaliação]
+    
 
 #### 5.2 Descrição dos dados 
 
 > LOJISTA: Tabela que armazena as informações relativa a loja que necessita da entrega.
 
 *nomefantasia: campo que armazena o nome popularizado da loja
+
 *CNPJ: campo que armazena o número de identicação da loja de caracter jurídico
+
 *razaosocial: campo que armazena o nome jurídico da loja 
+
 *nome_resp: campo que armazena o nome do funcionário que responde pela loja
+
 *telefone: campo que armazena o número para comunicação com o lojista
+
 *id_lojista: campo que armazena o código de identificação do lojista dentro do aplicativo
 
 
 > ENTREGADU: Tabela que armazena os dados dos entregadores cadastrados no aplicativo
+> 
 *cod_entregador: campo que armazena o código de identificação do entregador dentro do aplicativo
+
 *nome: campo que armazena o nome do entregador
+
 *telefone: campo que armazena o telefone do entregador
+
 *area_geografica: campo que armazena o cidade de atuação do entregador
+
 *email: campo que armazena o email do entregador
+
 *meio_transporte: campo que armazena o meio de locomoção do entregador
+
 *data_nascimento: campo que armazena a data de nascimento do entregador
+
 *cpf: campo que armazena o número do CPF do entregador para identificação externa do mesmo
 
 > CLIENTE: Tabela que armazena os dados dos clientes que compraram nas lojas cadastradas e esperam a encomenda
+
 *cod_cliente: campo que armazena o código de identificação do cliente dentro do aplicativo
+
 *nome: campo que armazena o nome do cliente
+
 *telefone: campo que armazena o telefone do cliente
 
 > ENCOMENDA: Tabela que armazena os dados das encomendas feitas pelos lojistas cadastrados no aplicativo
+
 *cod_encomenda: campo que armazena o código que identifica o cliente dentro do aplicativo
+
 *nomeprod: campo que armazena o nome do produto que será entregue 
+
 *descricao: campo que armazena a descrição do contéudo da encomenda
+
 *valor: campo que armazena o valor da encomenda que será entregue
+
 *quantidade: campo que armazena a quantidade de produtos estão sendo tratados dentro da encomenda
+
 *data_entrega: campo que armazena a data que a entrega deve ser levada até o cliente
+
 *hora_entrega: campo que armazena a previsão que a encomenda deve chegar ao cliente
+
 *hora_retirada: campo que armazena a hora que a encomenda pode ser retirada da loja
 
+
 > PEDIDO_entrega: Tabela que faz a relação entre entregador, cliente e encomenda
+
 *cod_pedido: campo que aramazena codigo da relação entre os dados dos pedidos
+
 *Essa relação cria apenas a relação entre os elementos envolvendo os códigos de identificação dos mesmos.
 
 > ENDERECO: Tabela que armazena informações relativas ao endereço dos cadastrados
+
 *logradouro: campo que armazena o nome da rua, viela, avenida dos cadastrados
+
 *numero: campo que armazena o número da casa dos cadastrados
+
 *bairro: campo que armazena o nome do bairro do cadastrado
+
 *cidade: campo que armazena o nome da cidade do cliente
+
 *cep: campo que armazena o cep para localização externa do cadastrado
+
 *complemento: campo que armazena dados complementares para encontrar o cadastrado
+
 *refencia: campo que armazena um ponto de referencia do endereço do cadastrado
+
 
 ### 6	MODELO LÓGICO<br>
 
