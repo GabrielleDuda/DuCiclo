@@ -20,7 +20,11 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-![Alt text](https://github.com/GabrielleDuda/DuCiclo/blob/main/Prototipo-%20Renato%20Marques%20e%20Gabrielle%20Azevedo.pdf?raw=true "DuCiclo") <br><br>
+![Proposta de logo](https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/LOGO.jpeg?raw=true "Logo - DuCiclo") <br><br>
+
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/modelo%20-%20loggin.png?raw=true" style="max-width:100%;">
+
+![Proposta de logo](https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/LOGO.jpeg?raw=true "Logo - DuCiclo") <br><br>
 
 
 ![Arquivo PDF do Protótipo Balsamiq feito para Aplicativo DuCiclo](https://github.com/GabrielleDuda/DuCiclo/blob/main/Prototipo-%20Renato%20Marques%20e%20Gabrielle%20Azevedo.pdf?raw=true "Aplicativo DuCiclo")
@@ -229,41 +233,5 @@ CREATE TABLE ENDERECO (logradouro varchar(50), número int, bairro varchar(50), 
 <br> 
 
 
-
-### 12 FORMATACAO NO GIT:<br> 
-https://help.github.com/articles/basic-writing-and-formatting-syntax/
-<comentario no git>
-    
-##### About Formatting
-    https://help.github.com/articles/about-writing-and-formatting-on-github/
-    
-##### Basic Formatting in Git
-    
-    https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests
-    
-    
-##### Working with advanced formatting
-    https://help.github.com/articles/working-with-advanced-formatting/
-#### Mastering Markdown
-    https://guides.github.com/features/mastering-markdown/
-
-    
-### OBSERVAÇÕES IMPORTANTES
-
-#### Todos os arquivos que fazem parte do projeto (Imagens, pdfs, arquivos fonte, etc..), devem estar presentes no GIT. Os arquivos do projeto vigente não devem ser armazenados em quaisquer outras plataformas.
-1. <strong>Caso existam arquivos com conteúdos sigilosos<strong>, comunicar o professor que definirá em conjunto com o grupo a melhor forma de armazenamento do arquivo.
-
-#### Todos os grupos deverão fazer Fork deste repositório e dar permissões administrativas ao usuário do git "profmoisesomena", para acompanhamento do trabalho.
-
-#### Os usuários criados no GIT devem possuir o nome de identificação do aluno (não serão aceitos nomes como Eu123, meuprojeto, pro456, etc). Em caso de dúvida comunicar o professor.
-
-
-Link para BrModelo:<br>
-http://www.sis4.com/brModelo/download.html
-<br>
-
-
-Link para curso de GIT<br>
-![https://www.youtube.com/curso_git](https://www.youtube.com/playlist?list=PLo7sFyCeiGUdIyEmHdfbuD2eR4XPDqnN2?raw=true "Title")
 
 
