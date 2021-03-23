@@ -20,13 +20,11 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-![Proposta de logo](https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/LOGO.jpeg?raw=true "Logo- DuCiclo" ) <br><br>
-
-
+![Proposta de logo](https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/LOGO.jpeg?raw=true "Logo- DuCiclo" height="20px") <br><br>
 
 ![Pasta com possiveis telas](https://github.com/GabrielleDuda/DuCiclo/tree/main/imagens)
 
-<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/modelo%20-%20loggin.png?raw=true" >
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/modelo%20-%20loggin.png?raw=true" height="200px">
 
 
 ![Arquivo PDF do Protótipo Balsamiq feito para Aplicativo DuCiclo](https://github.com/GabrielleDuda/DuCiclo/blob/main/Prototipo-%20Renato%20Marques%20e%20Gabrielle%20Azevedo.pdf?raw=true "Aplicativo DuCiclo")
