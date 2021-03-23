@@ -144,7 +144,7 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 
 ### 6	MODELO LÓGICO<br>
 
-![Alt text](https://github.com/GabrielleDuda/DuCiclo/blob/main/logico%20-%20DUCICLO.png?raw=true "Modelo LÓGICO")
+![Modelo Lógico - DuCiclo](https://github.com/GabrielleDuda/DuCiclo/blob/main/arquivos/logico%20-%20DUCICLO.png?raw=true "Modelo LÓGICO")
 
 
 ### 7	MODELO FÍSICO<br>
@@ -157,7 +157,7 @@ CREATE TABLE CLIENTE (cod_cliente integer PRIMARY KEY, nome varchar(50), telefon
 
 CREATE TABLE ENCOMENDA (cod_encomenda integer PRIMARY KEY, nomeprod varchar(50), descricao varchar(50), valor decimal, quantidade int, data_entrega date, hora_entrega timestamp, hora_retirada timestamp, FK_ENTREGADU integer, FK_LOJISTA integer, FOREIGN KEY (FK_ENTREGADU) REFERENCES ENTREGADU (cod_entregador), FOREIGN KEY (FK_LOJISTA) REFERENCES LOJISTA (id_lojista));
 
-CREATE TABLE PEDIDO_entrega (fk_encomenda integer, cod_pedido integer PRIMARY KEY, fk_ENTREGADU integer, fk_CLIENTE integer, FOREIGN KEY (fk_ENTREGADU) REFERENCES ENTREGADU (cod_entregador), FOREIGN KEY (fk_CLIENTE) REFERENCES CLIENTE (cod_cliente), FOREIGN KEY (fk_encomenda) REFERENCES ENCOMENDA (cod_encomenda));
+CREATE TABLE PEDIDO(fk_encomenda integer, cod_pedido integer PRIMARY KEY, fk_ENTREGADU integer, fk_CLIENTE integer, FOREIGN KEY (fk_ENTREGADU) REFERENCES ENTREGADU (cod_entregador), FOREIGN KEY (fk_CLIENTE) REFERENCES CLIENTE (cod_cliente), FOREIGN KEY (fk_encomenda) REFERENCES ENCOMENDA (cod_encomenda));
 
 CREATE TABLE ENDERECO (logradouro varchar(50), número int, bairro varchar(50), cep char(8), cidade varchar(50), complemento varchar(50), refencia varchar(50), cod_lojista integer, id_cliente integer, FOREIGN KEY (cod_lojista) REFERENCES LOJISTA (id_lojista), FOREIGN KEY (id_cliente) REFERENCES CLIENTE (cod_cliente));
        
