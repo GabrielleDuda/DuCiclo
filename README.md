@@ -20,7 +20,7 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-![Proposta de logo] <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/LOGO.jpeg?raw=true" height="50px"><br><br>
+![Proposta de logo] <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/LOGO.jpeg?raw=true" height="100px"><br><br>
 
 ![Pasta com possiveis telas](https://github.com/GabrielleDuda/DuCiclo/tree/main/imagens)
 
