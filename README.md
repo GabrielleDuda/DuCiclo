@@ -15,12 +15,16 @@ Renato Marques: renatomtf26@gmail.com<br>
 
 ### 3.MINI-MUNDO<br>
 
-A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes, com o objetivo de entregar com segurança qualquer coisa que possa ser carregada de maneira segura. A missão da plataforma é resolver o problema de lojistas que agora atendem delivery mas não possuem serviços próprios de entrega de mercadoria, além de gerar empregos para entregadores que não possuam carro ou moto para realizar a entrega.  Primeiramente ocorre um cadastro no aplicativo onde lojista se cadastra com CNPJ ou CPF, nome do estabelecimento ("nome fantasia"), Razão social, nome do responsável, telefone, endereço da loja. Os entregadores podem ser motoboys, ciclistas, ou usuários de qualquer forma de locomoção, para acesso a plataforma precisa cadastrar nome, cpf, data de nascimento para que não aceitar menores de idade, meio de transporte, área geográfica de atuação,  telefone para contato, email. A área geográfica vai ajudar a delimitar a atuação do entregador e assim possibilitar maior segurança no prazo para entrega das encomendas. O cliente tambem se cadastra com nome, CPF, telefone, podendo assim acompanhar a sua entrega. O lojista cadastra a encomenda (nome do produto,descrição, valor, quantidade, data da entrega, data de retirada, hora da entrega, hora de retirada) e estas são agrupadas por bairros próximos. O aplicativo apresenta ao entregador, de acordo com sua área, as entregas disponiveis para o dia seguinte, importante salientar que para o sistema de agrupamento de áreas próximas funcione é importante salienar que  as entregas tem prazo de 24horas para ocorrer. Quando o entregaDu aceita uma encomenda  é criado o pedido, que interliga o cliente cadastrado previamente (importante o logista orientar ao cliente essa necessidade), ao entregaDu e a encomenda cadastrada pelo lojista. Entega feita então se avalia todos os critérios por todos os envolvidos e assim a plataforma ganha em melhoria de atuação.
+A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes, com o objetivo de entregar com segurança qualquer coisa que possa ser carregada de maneira segura. A missão da plataforma é resolver o problema de lojistas que agora atendem delivery mas não possuem serviços próprios de entrega de mercadoria, além de gerar empregos para entregadores que não possuam carro ou moto para realizar a entrega.  Primeiramente ocorre um cadastro no aplicativo onde lojista se cadastra com CNPJ ou CPF, nome do estabelecimento ("nome fantasia"), Razão social, nome do responsável, telefone, endereço da loja. Os entregadores podem ser motoboys, ciclistas, ou usuários de qualquer forma de locomoção, para acesso a plataforma precisa cadastrar nome, cpf, data de nascimento para que não aceitar menores de idade, meio de transporte, área geográfica de atuação,  telefone para contato, email. A área geográfica vai ajudar a delimitar a atuação do entregador e assim possibilitar maior segurança no prazo para entrega das encomendas. O cliente tambem se cadastra com nome e telefone, podendo assim acompanhar a sua entrega. O lojista cadastra a encomenda (nome do produto,descrição, valor, quantidade, data da entrega, data de retirada, hora da entrega, hora de retirada) e estas são agrupadas por bairros próximos. O aplicativo apresenta ao entregador, de acordo com sua área, as entregas disponiveis para o dia seguinte, importante salientar que para o sistema de agrupamento de áreas próximas funcione é importante salienar que  as entregas tem prazo de 24horas para ocorrer. Quando o entregaDu aceita uma encomenda  é criado o pedido, que interliga o cliente cadastrado previamente (importante o logista orientar ao cliente essa necessidade), ao entregaDu e a encomenda cadastrada pelo lojista. Entega feita então se avalia todos os critérios por todos os envolvidos e assim a plataforma ganha em melhoria de atuação.
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
 ![Proposta de logo](https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/LOGO.jpeg?raw=true "Logo- DuCiclo" ) <br><br>
+
+
+
+![Pasta com possiveis telas](https://github.com/GabrielleDuda/DuCiclo/tree/main/imagens)
 
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/modelo%20-%20loggin.png?raw=true" >
 
@@ -39,14 +43,12 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+![Exemplo de Tabela de dados do Aplicativo DuCiclo](https://github.com/GabrielleDuda/DuCiclo/blob/main/arquivos/TABELA%20DE%20DADOS.xlsx?raw=true "Tabela - Aplicativo DuCiclo")
     
     
 ### 5.MODELO CONCEITUAL<br>
-![Alt text](https://github.com/GabrielleDuda/DuCiclo/blob/main/conceitual%20-%20DUCICLO.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/GabrielleDuda/DuCiclo/blob/main/arquivos/conceitual%20-%20DUCICLO.png?raw=true "Modelo Conceitual")
     
          
     
