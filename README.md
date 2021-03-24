@@ -236,5 +236,3 @@ CREATE TABLE PEDIDO(fk_encomenda integer, cod_pedido integer PRIMARY KEY, fk_ENT
 <br> 
 
 
-
-
