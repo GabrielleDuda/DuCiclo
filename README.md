@@ -15,7 +15,7 @@ Renato Marques: renatomtf26@gmail.com<br>
 
 ### 3.MINI-MUNDO<br>
 
-A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes, com o objetivo de entregar com segurança qualquer coisa que possa ser carregada de maneira segura. A missão da plataforma é resolver o problema de lojistas que agora atendem delivery mas não possuem serviços próprios de entrega de mercadoria, além de gerar empregos para entregadores que não possuam carro ou moto para realizar a entrega.  Primeiramente ocorre um cadastro no aplicativo onde lojista se cadastra com CNPJ ou CPF, nome do estabelecimento ("nome fantasia"), Razão social, nome do responsável, telefone, endereço da loja. Os entregadores podem ser motoboys, ciclistas, ou usuários de qualquer forma de locomoção, para acesso a plataforma precisa cadastrar nome, cpf, data de nascimento para que não aceitar menores de idade, meio de transporte, área geográfica de atuação,  telefone para contato, email. A área geográfica vai ajudar a delimitar a atuação do entregador e assim possibilitar maior segurança no prazo para entrega das encomendas. O cliente tambem se cadastra com nome e telefone, podendo assim acompanhar a sua entrega. O lojista cadastra a encomenda (nome do produto,descrição, valor, quantidade, data da entrega, data de retirada, hora da entrega, hora de retirada) e estas são agrupadas por bairros próximos. O aplicativo apresenta ao entregador, de acordo com sua área, as entregas disponiveis para o dia seguinte, importante salientar que para o sistema de agrupamento de áreas próximas funcione é importante salienar que  as entregas tem prazo de 24horas para ocorrer. Quando o entregaDu aceita uma encomenda  é criado o pedido, que interliga o cliente cadastrado previamente (importante o logista orientar ao cliente essa necessidade), ao entregaDu e a encomenda cadastrada pelo lojista. Entega feita então se avalia todos os critérios por todos os envolvidos e assim a plataforma ganha em melhoria de atuação.
+A plataforma DuCiclo têm a ideia de interligar motoboys, lojistas e clientes, com o objetivo de entregar com segurança qualquer coisa que possa ser carregada de maneira segura. A missão da plataforma é resolver o problema de lojistas que agora atendem delivery mas não possuem serviços próprios de entrega de mercadoria, além de gerar empregos para entregadores que não possuam carro ou moto para realizar a entrega.  Primeiramente ocorre um cadastro no aplicativo onde lojista se cadastra com CNPJ ou CPF, nome do estabelecimento ("nome fantasia"), Razão social, nome do responsável, telefone, endereço da loja. Os entregadores podem ser motoboys, ciclistas, ou usuários de qualquer forma de locomoção, desde de que façam acesso a plataforma cadastrando previamente cadastrar nome, cpf, data de nascimento (para que não sejam catalogados menores de idade), meio de transporte, área geográfica de atuação,  telefone para contato. A área geográfica vai ajudar a delimitar a atuação do entregador e assim possibilitar maior segurança no prazo para entrega das encomendas, previamente existentes na plataforma essa tem opções de grupos de bairros para atendimento. O cliente tambem pode se cadastrar com nome e telefone, sua função é acompanhar a entrega. O lojista cadastra a encomenda (nome do produto, descrição, valor, quantidade, data da entrega, hora da retirada da entrega) e estas são agrupadas por bairros proximos. O aplicativo apresenta ao entregador, de acordo com sua área, as entregas disponiveis para o dia seguinte, importante salientar que para o sistema de agrupamento de áreas próximas funcione é importante salienar: as entregas tem prazo de 24horas para ocorrer. Em outras palavras, o lojista cadastra mas não serão retiradas da loja no dia de cadastro da entrega. Quando o entregaDu aceita uma encomenda  é criado o pedido, que interliga o cliente cadastrado previamente (importante o logista orientar ao cliente essa necessidade), ao entregaDu e a encomenda cadastrada pelo lojista. Entrega feita então se avalia todos os critérios por todos os envolvidos e assim a plataforma ganha em melhoria de atuação.
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
@@ -51,8 +51,8 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
          
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+    [Grupo01]: Claudio Magno e Diogo Tomas : "Achei bem interessante a idéia, principalmente nesse período atual, só não entendi bem onde o endereço do cliente seria armazenado, pois o modelo conceitual do seu projeto apenas o lojista possui o endereço"
+    [Grupo02]: Eduardo Alves, Renato Peres e Thiago Corrêa: "Acho q deveria ter o código do lojista na encomenda, e a cardinalidade de encomenda-lojista acho q deveria ser 1,1 do lado do lojista, acho q tinha que ter uma fk para o endereço na tabela do lojista, a cardinalidade de encomenda-cliente acho q deveria ser 1,1 do lado do cliente."
     
 
 #### 5.2 Descrição dos dados 
@@ -82,13 +82,12 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 
 *area_geografica: campo que armazena o cidade de atuação do entregador
 
-*email: campo que armazena o email do entregador
-
 *meio_transporte: campo que armazena o meio de locomoção do entregador
 
 *data_nascimento: campo que armazena a data de nascimento do entregador
 
 *cpf: campo que armazena o número do CPF do entregador para identificação externa do mesmo
+
 
 > CLIENTE: Tabela que armazena os dados dos clientes que compraram nas lojas cadastradas e esperam a encomenda
 
@@ -98,6 +97,7 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 
 *telefone: campo que armazena o telefone do cliente
 
+
 > ENCOMENDA: Tabela que armazena os dados das encomendas feitas pelos lojistas cadastrados no aplicativo
 
 *cod_encomenda: campo que armazena o código que identifica o cliente dentro do aplicativo
@@ -106,22 +106,17 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 
 *descricao: campo que armazena a descrição do contéudo da encomenda
 
-*valor: campo que armazena o valor da encomenda que será entregue
-
 *quantidade: campo que armazena a quantidade de produtos estão sendo tratados dentro da encomenda
 
 *data_entrega: campo que armazena a data que a entrega deve ser levada até o cliente
 
-*hora_entrega: campo que armazena a previsão que a encomenda deve chegar ao cliente
-
 *hora_retirada: campo que armazena a hora que a encomenda pode ser retirada da loja
 
 
-> PEDIDO_entrega: Tabela que faz a relação entre entregador, cliente e encomenda
+> entrega: Tabela que faz a relação entre entregador, cliente e encomenda
 
-*cod_pedido: campo que aramazena codigo da relação entre os dados dos pedidos
+> escolhe: Tabela que faz a relação entre os entregadores dentro da mesma área geografica
 
-*Essa relação cria apenas a relação entre os elementos envolvendo os códigos de identificação dos mesmos.
 
 > ENDERECO: Tabela que armazena informações relativas ao endereço dos cadastrados
 
@@ -140,6 +135,15 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 *refencia: campo que armazena um ponto de referencia do endereço do cadastrado
 
 
+> AREA_GEOGRAFICA: Tabela que armazena informações relativas ao quadro de endereços de uma mesma área
+
+*nome: campo que armazena o nome da area geografica agrupada
+
+*cidade: campo que armazena as cidades dentro da área georgráfica
+
+*bairro: campo que armazena o nome do bairros dentro da área georgráfica
+
+
 ### 6	MODELO LÓGICO<br>
 
 ![Modelo Lógico - DuCiclo](https://github.com/GabrielleDuda/DuCiclo/blob/main/arquivos/logico%20-%20DUCICLO.png?raw=true "Modelo LÓGICO")
@@ -149,15 +153,18 @@ A plataforma DuCiclo vem com a ideia de interligar motoboys, lojistas e clientes
 
 CREATE TABLE LOJISTA (nomefantasia varchar(50), CNPJ char(13), razaosocial varchar(50), nome_resp varchar(50), telefone char(11), id_lojista integer PRIMARY KEY);
 
-CREATE TABLE ENTREGADU (cod_entregador integer PRIMARY KEY, nome varchar(50), telefone char(11), area_geografica varchar(30), email varchar(50), meio_transporte varchar(50), data_nascimento date, cpf char(11);
+CREATE TABLE ENTREGADU (cod_entregador integer PRIMARY KEY, nome varchar(50), telefone char(11), area_geografica varchar(30), meio_transporte varchar(50), data_nascimento date, cpf char(11);
 
 CREATE TABLE CLIENTE (cod_cliente integer PRIMARY KEY, nome varchar(50), telefone varchar(11));
 
-CREATE TABLE ENCOMENDA (cod_encomenda integer PRIMARY KEY, nomeprod varchar(50), descricao varchar(50), valor decimal, quantidade int, data_entrega date, hora_entrega timestamp, hora_retirada timestamp, FK_ENTREGADU integer, FK_LOJISTA integer, FOREIGN KEY (FK_ENTREGADU) REFERENCES ENTREGADU (cod_entregador), FOREIGN KEY (FK_LOJISTA) REFERENCES LOJISTA (id_lojista));
+CREATE TABLE ENCOMENDA (cod_encomenda integer PRIMARY KEY, nomeprod varchar(50), descricao varchar(50), quantidade int, data_entrega date, hora_retirada timestamp, FK_LOJISTA integer,  FOREIGN KEY (FK_LOJISTA) REFERENCES LOJISTA (id_lojista), FK_CLIENTE);
+
+CREATE TABLE ENDERECO (logradouro varchar(50), número int, bairro varchar(50), cep char(8), cidade varchar(50), complemento varchar(50), refencia varchar(50), cod_lojista integer, id_cliente integer, FOREIGN KEY (cod_lojista) REFERENCES LOJISTA (id_lojista), FOREIGN KEY (id_cliente) REFERENCES CLIENTE (cod_cliente));
 
 CREATE TABLE PEDIDO(fk_encomenda integer, cod_pedido integer PRIMARY KEY, fk_ENTREGADU integer, fk_CLIENTE integer, FOREIGN KEY (fk_ENTREGADU) REFERENCES ENTREGADU (cod_entregador), FOREIGN KEY (fk_CLIENTE) REFERENCES CLIENTE (cod_cliente), FOREIGN KEY (fk_encomenda) REFERENCES ENCOMENDA (cod_encomenda));
 
-CREATE TABLE ENDERECO (logradouro varchar(50), número int, bairro varchar(50), cep char(8), cidade varchar(50), complemento varchar(50), refencia varchar(50), cod_lojista integer, id_cliente integer, FOREIGN KEY (cod_lojista) REFERENCES LOJISTA (id_lojista), FOREIGN KEY (id_cliente) REFERENCES CLIENTE (cod_cliente));
+
+
        
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
