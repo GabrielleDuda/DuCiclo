@@ -20,7 +20,8 @@ A plataforma DuCiclo têm a ideia de interligar motoboys, lojistas e clientes, c
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-![Proposta de logo] <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/LOGO.jpeg?raw=true" height="200px"><br><br>
+![Proposta de logo]
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/LOGO.jpeg?raw=true" height="200px"><br><br>
 
 ![Pasta com possiveis telas](https://github.com/GabrielleDuda/DuCiclo/tree/main/imagens)
 
@@ -113,6 +114,7 @@ A plataforma DuCiclo têm a ideia de interligar motoboys, lojistas e clientes, c
 
 > entrega: Tabela que faz a relação entre entregador, cliente e encomenda
 
+
 > escolhe: Tabela que faz a relação entre os entregadores dentro da mesma área geografica
 
 
@@ -149,19 +151,44 @@ A plataforma DuCiclo têm a ideia de interligar motoboys, lojistas e clientes, c
 
 ### 7	MODELO FÍSICO<br>
 
-CREATE TABLE LOJISTA (nomefantasia varchar(50), CNPJ char(13), razaosocial varchar(50), nome_resp varchar(50), telefone char(11), id_lojista integer PRIMARY KEY);
 
-CREATE TABLE ENTREGADU (cod_entregador integer PRIMARY KEY, nome varchar(50), telefone char(11), area_geografica varchar(30), meio_transporte varchar(50), data_nascimento date, cpf char(11);
+CREATE TABLE Area_geografica (
+    id_area integer PRIMARY KEY, nome varchar(100), cidade varchar(100), bairro varchar(100) );
 
-CREATE TABLE CLIENTE (cod_cliente integer PRIMARY KEY, nome varchar(50), telefone varchar(11));
+CREATE TABLE ENDERECO (
+    id_endereco integer PRIMARY KEY, loragradouro varchar(100), numero char(5), bairro varchar(100), cidade varchar(100), cep char(11), complemento varchar(100), referencia varchar(100), id_area integer, FOREIGN KEY (id_area) REFERENCES Area_geografica (id_area) ON DELETE RESTRICT );
 
-CREATE TABLE ENCOMENDA (cod_encomenda integer PRIMARY KEY, nomeprod varchar(50), descricao varchar(50), quantidade int, data_entrega date, hora_retirada timestamp, FK_LOJISTA integer,  FOREIGN KEY (FK_LOJISTA) REFERENCES LOJISTA (id_lojista), FK_CLIENTE);
+CREATE TABLE LOJISTA (
+	id_lojista integer PRIMARY KEY, nomefantasia varchar(100), CNPJ char(11), razaosocial varchar(100), nome_resp varchar(100), telefone char(11), id_endereco integer, FOREIGN KEY (id_endereco) REFERENCES ENDERECO (id_endereco) ON DELETE RESTRICT );
 
-CREATE TABLE ENDERECO (logradouro varchar(50), número int, bairro varchar(50), cep char(8), cidade varchar(50), complemento varchar(50), refencia varchar(50), cod_lojista integer, id_cliente integer, FOREIGN KEY (cod_lojista) REFERENCES LOJISTA (id_lojista), FOREIGN KEY (id_cliente) REFERENCES CLIENTE (cod_cliente));
+CREATE TABLE ENTREGADU (
+    cod_entregador integer PRIMARY KEY, nome varchar(100), telefone char(11), meio_transporte varchar(100), data_nascimento date, cpf char(11) );
 
-CREATE TABLE PEDIDO(fk_encomenda integer, cod_pedido integer PRIMARY KEY, fk_ENTREGADU integer, fk_CLIENTE integer, FOREIGN KEY (fk_ENTREGADU) REFERENCES ENTREGADU (cod_entregador), FOREIGN KEY (fk_CLIENTE) REFERENCES CLIENTE (cod_cliente), FOREIGN KEY (fk_encomenda) REFERENCES ENCOMENDA (cod_encomenda));
+CREATE TABLE CLIENTE ( 
+    cod_cliente integer PRIMARY KEY, nome varchar(100), telefone varchar(11) );
 
+CREATE TABLE ENCOMENDA (
+    cod_encomenda integer PRIMARY KEY, nomeprod varchar(50),
+    descricao varchar(100), quantidade int, data_entrega date, hora_retirada time,
+    cod_cliente integer, id_lojista integer, id_endereco integer,    
+	FOREIGN KEY (cod_cliente) REFERENCES CLIENTE (cod_cliente) ON DELETE RESTRICT,
+	FOREIGN KEY (id_lojista) REFERENCES LOJISTA (id_lojista) ON DELETE RESTRICT,
+	FOREIGN KEY (id_endereco) REFERENCES ENDERECO (id_endereco) ON DELETE RESTRICT
+);
 
+CREATE TABLE escolhe (
+	id_area integer, cod_entregador integer,
+   FOREIGN KEY (cod_entregador) REFERENCES ENTREGADU (cod_entregador) ON DELETE SET NULL
+);
+
+CREATE TABLE entrega (
+    cod_entregador integer, cod_encomenda integer,
+    FOREIGN KEY (cod_entregador) REFERENCES ENTREGADU (cod_entregador) ON DELETE RESTRICT,
+    FOREIGN KEY (cod_encomenda) REFERENCES ENCOMENDA (cod_encomenda) ON DELETE SET NULL
+);
+ 
+
+ 
 
        
        
