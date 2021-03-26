@@ -217,29 +217,28 @@ CREATE TABLE entrega (
           
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
-![select * from Area_geografica;]
+>>select * from Area_geografica;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2001.JPG" >
 
-
-![select * from ENDERECO;]
+>>select * from ENDERECO;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2002.JPG" >
 
-![select * from LOJISTA;]
+>>select * from LOJISTA;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2003.JPG" >
 
-![select * from ENTREGADU;]
+>>select * from ENTREGADU;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2004.JPG" >
 
-![select * from CLIENTE;]
+>>select * from CLIENTE;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2005.JPG" >
 
-![select * from ENCOMENDA;]
+>>select * from ENCOMENDA;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2006.JPG" >
 
-![select * from escolhe;]
+>>select * from escolhe;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2007.JPG" >
 
-![select * from entrega;]
+>>select * from entrega;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2008.JPG" >
 
 
