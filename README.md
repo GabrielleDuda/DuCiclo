@@ -194,23 +194,57 @@ CREATE TABLE entrega (
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 
+>> insert into Area_geografica (id_area, nome, cidade, bairro ) values (1001,	'AREA01', 'VITORIA', 'Bento Ferreira, Jucutuquara'), (1002, 'AREA02', 'VITORIA', 'Jardim Camburi, Praia do Canto, Goiabeiras'), (1003, 'AREA03', 'SERRA', 'Laranjeiras, Helio Ferraz'), (1004, 'AREA04', 'SERRA', 'Bairro de Fatima'), (1005, 'AREA05', 'VILA VELHA', 'Itapua, Itaparica'), (1006, 'AREA06', 'CARIACICA', 'Campo Grande');
+
+>> insert into ENDERECO (id_endereco, loragradouro, numero, bairro, cidade, cep, complemento, referencia, id_area) values (10,	'Rua 1D', 135, 'Larajeiras', 'Serra', '29160734', 'Predio numero 101', 'Atras da quadra', 1003), (11, 'Rua João Avelange', 445, 'Bairro de Fatima', 'Serra', '29145733', '', 'Perto do posto', 1004), (12, 'Av. Jose Rato', 1001, 'Bairro de Fatima', 'Serra', '29345722', '', 'Perto do shopping', 1004), (13, 'Rua 3R', 112, 'Itapua', 'Vila Velha', '29133987', 'Casa Vermelha', 'Ao lado do bobs', 1005), (14, 'Rua Quintino Denadai', 247, 'Helio Ferraz', 'Serra', '29134113', 'Predio Branco e verde', 'Atras da Escola', 1003), (15, 'Av. Vitoria', 120, 'Bento Ferreira', 'Vitoria', '29198567', '', 'Em frente a Faculdade', 1001), (16, 'Rua Rio Amazonas', 2311, 'Jucutuquara', 'Vitoria', '29188235', '', 'Atras da Praia', 1001), (17, 'Rua Araceli', 1252, 'Campo Grande', 'Cariacica', '29160735', '', 'Depois da Ponte', 1006), (18, 'Rua Jose Antonio Moraes', 135, 'Larajeiras', 'Serra', '29145734', 'Predio numero 201', '', 1003), (19, 'Avenida Alberto Ribeiro', 445, 'Bairro de Fatima', 'Serra', '29345723', '', 'Perto do posto', 1004), (20, 'Rua Dois', 1001, 'Bairro de Fatima', 'Serra', '29133988', '', 'Perto do shopping', 1004), (21, 'Avenida Curitiba', 112, 'Itaparica', 'Vila Velha', '29134114', 'Casa Vermelha', 'Ao lado do bobs', 1005), (22, 'Travessa das flores', 247, 'Helio Ferraz', 'Serra', '29198568', 'Predio Branco e verde', 'Atras da Escola', 1003), (23, 'rua Dr João Andrade', 120, 'Bento Ferreira', 'Vitoria', '29188236', '', 'Em frente a Faculdade', 1001), (24, 'Rua Pintorama', 2311, 'Jucutuquara', 'Vitoria', '29160736', '', 'Atras da Praia', 1001), (25, 'Avenida Dante Michelini', 1252, 'Jardim Camburi', 'Vitoria', '29145735', '', 'Depois da Ponte', 1002), (26, 'Rua Chapot Presvot', 434, 'Praia do Canto', 'Vitoria', '29445724', 'apt 202', 'ed costa vistoria', 1002), (27, 'Travessa Heitor dias', 1002, 'Jardim Camburi', 'Vitoria', '29133989', 'casa', 'esquina com açai dos sabores', 1002), (28, 'Avenia Dr Rui Barros', 22, 'Goiabeiras', 'Vitoria', '29134115', 'apt 1002', 'ed acacio', 1002);
+
+>> insert into LOJISTA (id_lojista, nomefantasia, CNPJ, razaosocial, nome_resp, telefone, id_endereco) values (2544, 'Pastel do Alex', '146295740000162', 'Renan S. Sartorio ME', 'Renan Soares Sartorio', '27916489685', 10), (2545, 'Dujour', '471963234000171', 'Bef Moda Feminina e vestuário', 'Barbara Ferreira', '2792447354', 11), (2546, 'Sapataria do Futuro', '240288106000134', 'Patricia P. de Paulo MEI', 'Patricia Palio de Paulo', '2792745346', 12), (2547, 'Alimentos Fit', '961923079000189', 'Ana M. Sodre ME', 'Ana Marques Sodre', '2798450798', 13), (2548, 'Lavanderia Lavou Tá Novo', '270123430000106', 'Lucinda Benedita ME', 'Lucinda Benedita', '2792359483', 14), (2549, 'Acessórios do Bem', '961923009000290', 'VR utilidades e moda', 'Thiago Benevindo Soares', '21981332256', 15), (2550, 'MF Estamparia', '273423471000199', 'Estampas e tecnologia S.A.', 'Mirela Freitas', '2733990020', 16), (2551, 'Imafar Vila velha', '03365852000222', 'Cromo - Comercio E Manipulacao De Produtos Farmaceuticos Ltda', 'Rodrigo Possato', '27981337111', 17), (2552, 'Itown', '441234881000100', 'Itown Saraiva e Siciliano S.a.', 'Eduardo Soares', '2799722100', 18);
+
+>> insert into ENTREGADU (cod_entregador, nome, meio_transporte, telefone, data_nascimento, cpf) values (2245, 'Pedro Henrique Santos', 'minivan', '2796359890', '1998-12-21', '12490832700'), (2246, 'Jeorge Paulo Duarte', 'moto elétrica', '27902833948', '1988-12-3', '14503923703'), (2247, 'Santos De Sá', 'carro', '27944325435', '1999-2-23', '14175924712'), (2248, 'Sidoca De Souza', 'Bicicleta', '27999203421', '1992-11-24', '11194488788'), (2249, 'Renato Ferreira', 'Bicicleta', '27902930092', '1990-1-10', '15806403700'), (2250, 'Diana Cardoso', 'patinete', '27911230908', '1990-6-9', '10640712755'), (2251, 'Miria Silva', 'moto', '27934511154', '1993-1-2', '11200711703'),
+(2252, 'Carla Souza Alvarenga', 'Bicicleta', '2799778421', '1989-3-14', '10500930733'); 
+
+>> insert into  CLIENTE (cod_cliente, nome, telefone) values (2245, 'Pedro Joao de Lukas', '27937289654'), (2246, 'Marcia Santiago', '27917352009'), (2247, 'Gabrielle Santos', '27921328809'), (2248, 'Luiz Marcos Souza', '27999288754'), (2249, 'Ramom Wesley', '27911991560'), (2250, 'Deivid Jorgete Lanzini', '2799990293'), (2251, 'Fernanda Gomes', '2799893345'), (2252, 'Carla Santos de Sá', '27977899911'), (2253, 'Cecilia Antunes', '27917352010'), (2254, 'Rita Azevedo', '27921328810'), (2255, 'Eduardo Magnago', '27999288755');
+
+>> insert into  ENCOMENDA (cod_encomenda, nomeprod, descricao, quantidade, data_entrega, hora_retirada,  >>id_lojista, cod_cliente, id_endereco) values (2023, 'comida', 'kit de 7 saladas, 3 sobremesas e 5 sucos desintoxicantes', '1', '2021-3-24', '12:00', 2547, 2245, 19), (2234, 'comida', 'pasteizinhos de sabores variados congelados, peso 3kg', '300', '2021-3-24', '13:00', 2544, 2246, 20), (2445, 'comida', 'kibe de carne congelado para festa', '100', '2021-3-24', '13:00', 2544, 2247, 21), (2656, 'roupa', 'vestido feminio', '1', '2021-3-24', '12:00', 2545, 2248, 22), (2867, 'roupa', 'conjunto de blusa e calça feminino', '1', '2021-3-24', '11:00', 2545, 2249, 23), (3078, 'roupa de cama', 'edredon lavado e passado', '1', '2021-3-24', '10:00', 2548, 2250, 24), (3289, 'sapato', 'bota para construção civil e sapato de salto', '2', '2021-3-25', '09:00', 2546, 2251, 25),
+(3500, 'comida', 'kit de frutas congeladas para smoothie', '4', '2021-3-25', '10:00', 2547, 2252, 20), (3711, 'comida', 'kit de frutas congeladas para smoothie', '2', '2021-3-25', '09:00', 2547, 2250, 21), (4133, 'utensilios casa', 'mesa de canto', '1', '2021-3-25', '12:00', 2549, 2254, 22), (4344, 'roupa', 'jogo de camisas decorativas', '14', '2021-3-25', '11:00', 2550, 2253, 26), (4555, 'remédio', 'remedios manipulados caixa pequena', '6', '2021-3-26', '10:00', 2551, 2254, 27), (4766, 'eletroeletrônico', 'lampada led mesa multicolor', '1', '2021-3-26', '09:00', 2552, 2255, 28); 
+
+>> insert into  escolhe (id_area, cod_entregador) values (1002, 2245), (1003, 2246), (1001, 2247), (1004, 2248), (1005, 2249), (1006, 2250), (1004, 2251), (1001, 2252); 
+
+>> insert into entrega (cod_entregador, cod_encomenda) values (2248, 2023), (2248, 2234), (2249, 2445), (2246, 2656), (2247, 2867), (2247, 3078), (2245, 3289), (2251, 3500), (2249, 3711), (2246, 4133), (2245, 4344), (2245, 4555), (2245, 4766);
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
-    OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
-    
-    
-    
-    
+          
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
+>>select * from Area_geografica;
+<https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2001.JPG>
 
+>>select * from ENDERECO;
+<https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2002.JPG>
 
+>>select * from LOJISTA;
+<https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2003.JPG>
 
+>>select * from ENTREGADU;
+<https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2004.JPG>
 
-># Marco de Entrega 01: Do item 1 até o item 9.1<br>
+>>select * from CLIENTE;
+<https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2005.JPG>
+
+>>select * from ENCOMENDA;
+<https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2006.JPG>
+
+>>select * from escolhe;
+<https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2007.JPG>
+
+>>select * from entrega;
+<https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2008.JPG>
+
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+
+
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     b) Criar no mínimo 3 consultas com operadores aritméticos 
