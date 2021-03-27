@@ -264,9 +264,38 @@ CREATE TABLE entrega (
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOSsq
     a) Consultas que envolvam os operadores lógicos AND, OR e Not
+
+>>select *from ENDERECO where (id_area = 1003 or id_area = 1004 );
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/And%2C%20or%2C%20not/aritmetica%20001.JPG" >
+
+>>select cod_encomenda from ENCOMENDA where (quantidade >10 and quatidade<100);
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/And%2C%20or%2C%20not/aritmetica%20002.JPG" >
+
+>>select *from ENCOMENDA where (id_lojista = 2544 or id_lojista = 2547);
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/And%2C%20or%2C%20not/aritmetica%20003.JPG" >
+
+>>select nome from ENTREGADU where meio_transporte not in ('Bicicleta');
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/And%2C%20or%2C%20not/aritmetica%20004.JPG" >
+
+>>select *from area_geografica where cidade not in ('SERRA');
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/And%2C%20or%2C%20not/aritmetica%20005.JPG" >
+
     
-    
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
+    b) Criar consultas com operadores aritméticos 
+ 
+ No caso da proposta apresentada no trabalho, tais cálculos não se fazem tão utéis apenas para finalidade de médias. Outros operadores como count podem ajudar a estabelecer relatórios mais reais. Porém, como critério de nota, duas sugestões de contas foram propostas.
+ 
+ 
+>>média de entregas por entregadores:
+    select (qtd_encomendas / qtd_entregadores ) as media 
+	from ( select count(cod_entregador) as qtd_entregadores,
+	(select count(cod_encomenda) from ENCOMENDA) as qtd_encomendas from ENTREGADU ) as quantidades;
+ <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/operadores%20aritmeticos/aritmetica%20006.JPG" >
+
+
+
+
+
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
@@ -294,8 +323,6 @@ CREATE TABLE entrega (
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
-
-># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
 ### 10 RELATÓRIOS E GRÁFICOS
 
