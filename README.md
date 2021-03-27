@@ -293,10 +293,28 @@ CREATE TABLE entrega (
  <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/operadores%20aritmeticos/aritmetica%20006.JPG" >
 
 
+>>porcentagem de entregas por lojista (o elephantsql arredonda os resultados): 
+    select ((qtd_loja / qtd_entregas )*100 ) as porcentagem 
+	from ( select count(id_lojista='2547') as qtd_loja,
+	(select count(cod_encomenda) from ENCOMENDA) as qtd_entregas from ENCOMENDA) as quantidades;
+ <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/operadores%20aritmeticos/aritmetica%20007.JPG" >
 
 
+    c) Consultas com operação de renomear nomes de campos ou tabelas
 
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+>> select loragradouro AS Logradouro FROM ENDERECO;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/rename/imagem001.JPG" >
+
+>> ALTER TABLE ENTREGADU RENAME TO ENTREGADOR ; ;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/rename/imagem002.JPG" >
+
+>> select cod_entregador AS id_entregadu FROM ENTREGADU;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/rename/imagem003.JPG" >
+
+>> select nomeprod AS tipo_produto FROM ENCOMENDA;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/rename/imagem004.JPG" >
+
+
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
