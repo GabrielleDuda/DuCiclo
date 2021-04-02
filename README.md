@@ -316,9 +316,53 @@ CREATE TABLE entrega (
 
 
 
-#### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
+#### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS  <br>
+    a) Criar consultas que envolvam like ou ilike
+ 
+Buscando nome de bairro:
+>> select *from endereco where bairro like '%atima'; 
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/like%20or%20ilike/Capturar01.JPG" >
+
+Quais itens vem em maior quantidade:
+>> select *from encomenda where descricao like 'kit%';
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/like%20or%20ilike/Capturar02.JPG" >
+
+Buscando o nome de um cliente:
+>> select *from cliente where nome like 'C%';
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/like%20or%20ilike/Capturar03.JPG" >
+
+Buscando nome comercial de loja com letra M:
+>> select *from lojista where nomefantasia ilike 'm%';
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/like%20or%20ilike/Capturar04.JPG" >
+
+Buscando ruas cadastradas nos endereços:
+>> select *from endereco where logradouro ilike 'rua%'
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/like%20or%20ilike/Capturar05.JPG" >
+
+Buscando entregador com a letra S:
+>>select *from entregador where nome ilike 'S$';
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/like%20or%20ilike/Capturar05.JPG" >
+
+
     b) Criar uma consulta para cada tipo de função data apresentada.
+ 
+Buscando a idade dos entregadores cadastrados:
+>> select nome, current_date as data_atual, data_nascimento, (age(current_date, data_nascimento)) from entregador;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/DATE/Capturar01.JPG">
+
+Buscando os dias de entregas:
+>> select DATE_PART('day', data_entrega) as dia from encomenda;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/DATE/Capturar02.JPG">
+
+Buscando o dia cadastrado as encomendas:
+>> select  data_entrega  - interval '1 day' as novo  from encomenda ;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/DATE/Capturar03.JPG">
+
+Buscando a quantos dias as entregas foram realizadas:
+>> select data_entrega ,(age(current_Date, data_entrega)) as tempo from encomenda ;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/DATE/Capturar04.JPG">
+
+
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
