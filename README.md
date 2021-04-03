@@ -159,7 +159,7 @@ CREATE TABLE ENDERECO (
     id_endereco integer PRIMARY KEY, loragradouro varchar(100), numero char(5), bairro varchar(100), cidade varchar(100), cep char(11), complemento varchar(100), referencia varchar(100), id_area integer, FOREIGN KEY (id_area) REFERENCES Area_geografica (id_area) ON DELETE RESTRICT );
 
 CREATE TABLE LOJISTA (
-	id_lojista integer PRIMARY KEY, nomefantasia varchar(100), CNPJ char(11), razaosocial varchar(100), nome_resp varchar(100), telefone char(11), id_endereco integer, FOREIGN KEY (id_endereco) REFERENCES ENDERECO (id_endereco) ON DELETE RESTRICT );
+	id_lojista integer PRIMARY KEY, nomefantasia varchar(100), CNPJ varchar(15), razaosocial varchar(100), nome_resp varchar(100), telefone char(11), id_endereco integer, FOREIGN KEY (id_endereco) REFERENCES ENDERECO (id_endereco) ON DELETE RESTRICT );
 
 CREATE TABLE ENTREGADU (
     cod_entregador integer PRIMARY KEY, nome varchar(100), telefone char(11), meio_transporte varchar(100), data_nascimento date, cpf char(11) );
@@ -205,7 +205,7 @@ CREATE TABLE entrega (
 
 >> insert into  CLIENTE (cod_cliente, nome, telefone) values (2245, 'Pedro Joao de Lukas', '27937289654'), (2246, 'Marcia Santiago', '27917352009'), (2247, 'Gabrielle Santos', '27921328809'), (2248, 'Luiz Marcos Souza', '27999288754'), (2249, 'Ramom Wesley', '27911991560'), (2250, 'Deivid Jorgete Lanzini', '2799990293'), (2251, 'Fernanda Gomes', '2799893345'), (2252, 'Carla Santos de Sá', '27977899911'), (2253, 'Cecilia Antunes', '27917352010'), (2254, 'Rita Azevedo', '27921328810'), (2255, 'Eduardo Magnago', '27999288755');
 
->> insert into  ENCOMENDA (cod_encomenda, nomeprod, descricao, quantidade, data_entrega, hora_retirada,  >>id_lojista, cod_cliente, id_endereco) values (2023, 'comida', 'kit de 7 saladas, 3 sobremesas e 5 sucos desintoxicantes', '1', '2021-3-24', '12:00', 2547, 2245, 19), (2234, 'comida', 'pasteizinhos de sabores variados congelados, peso 3kg', '300', '2021-3-24', '13:00', 2544, 2246, 20), (2445, 'comida', 'kibe de carne congelado para festa', '100', '2021-3-24', '13:00', 2544, 2247, 21), (2656, 'roupa', 'vestido feminio', '1', '2021-3-24', '12:00', 2545, 2248, 22), (2867, 'roupa', 'conjunto de blusa e calça feminino', '1', '2021-3-24', '11:00', 2545, 2249, 23), (3078, 'roupa de cama', 'edredon lavado e passado', '1', '2021-3-24', '10:00', 2548, 2250, 24), (3289, 'sapato', 'bota para construção civil e sapato de salto', '2', '2021-3-25', '09:00', 2546, 2251, 25),
+>> insert into  ENCOMENDA (cod_encomenda, nomeprod, descricao, quantidade, data_entrega, hora_retirada, id_lojista, cod_cliente, id_endereco) values (2023, 'comida', 'kit de 7 saladas, 3 sobremesas e 5 sucos desintoxicantes', '1', '2021-3-24', '12:00', 2547, 2245, 19), (2234, 'comida', 'pasteizinhos de sabores variados congelados, peso 3kg', '300', '2021-3-24', '13:00', 2544, 2246, 20), (2445, 'comida', 'kibe de carne congelado para festa', '100', '2021-3-24', '13:00', 2544, 2247, 21), (2656, 'roupa', 'vestido feminio', '1', '2021-3-24', '12:00', 2545, 2248, 22), (2867, 'roupa', 'conjunto de blusa e calça feminino', '1', '2021-3-24', '11:00', 2545, 2249, 23), (3078, 'roupa de cama', 'edredon lavado e passado', '1', '2021-3-24', '10:00', 2548, 2250, 24), (3289, 'sapato', 'bota para construção civil e sapato de salto', '2', '2021-3-25', '09:00', 2546, 2251, 25),
 (3500, 'comida', 'kit de frutas congeladas para smoothie', '4', '2021-3-25', '10:00', 2547, 2252, 20), (3711, 'comida', 'kit de frutas congeladas para smoothie', '2', '2021-3-25', '09:00', 2547, 2250, 21), (4133, 'utensilios casa', 'mesa de canto', '1', '2021-3-25', '12:00', 2549, 2254, 22), (4344, 'roupa', 'jogo de camisas decorativas', '14', '2021-3-25', '11:00', 2550, 2253, 26), (4555, 'remédio', 'remedios manipulados caixa pequena', '6', '2021-3-26', '10:00', 2551, 2254, 27), (4766, 'eletroeletrônico', 'lampada led mesa multicolor', '1', '2021-3-26', '09:00', 2552, 2255, 28); 
 
 >> insert into  escolhe (id_area, cod_entregador) values (1002, 2245), (1003, 2246), (1001, 2247), (1004, 2248), (1005, 2249), (1006, 2250), (1004, 2251), (1001, 2252); 
@@ -216,6 +216,8 @@ CREATE TABLE entrega (
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
           
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+
+COLAB : https://colab.research.google.com/drive/18_EpkzlgGRnyzZhDIQQunSn9MoO7I-Qf?usp=sharing
 
 >>select * from Area_geografica;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/select%2001.JPG" >
@@ -305,7 +307,7 @@ CREATE TABLE entrega (
 >> select loragradouro AS Logradouro FROM ENDERECO;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/rename/imagem001.JPG" >
 
->> ALTER TABLE ENTREGADU RENAME TO ENTREGADOR ; ;
+>> ALTER TABLE ENTREGADU RENAME TO ENTREGADOR ;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/rename/imagem002.JPG" >
 
 >> select cod_entregador AS id_entregadu FROM ENTREGADU;
@@ -364,9 +366,29 @@ Buscando a quantos dias as entregas foram realizadas:
 
 
 
-#### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
-    a) Criar minimo 3 de exclusão
-    b) Criar minimo 3 de atualização
+#### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS <br>
+    a) Criar instrução de exclusão
+    /*A instrução delete foi testada mas não implementada para que não ocorrer perdas de valores no trabalho*/
+
+>>delete from cliente where cod_cliente = 2248;
+
+>>delete from entrega where cod_encomenda = 2234;
+
+    b) Criar funções de atualização
+    /*utilizando instrução update*/
+    
+>>update cliente set nome = 'João Pedro Lucas' where nome = 'Pedro Joao de Lukas';
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/update/Capturar1.JPG">
+
+>>update entregador set meio_transporte = 'mini-van' where meio_transporte = 'minivan';
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/update/Capturar2.JPG">
+
+>>update entregador set meio_transporte = 'moto como baú' where meio_transporte = 'moto';
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/update/Capturar3.JPG">
+
+>>update entregador set nome = 'Sidney Soares de Souza' where nome = 'Sidoca De Souza';
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/update/Capturar4.JPG">
+
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
