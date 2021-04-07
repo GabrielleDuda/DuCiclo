@@ -390,23 +390,125 @@ Buscando a quantos dias as entregas foram realizadas:
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/update/Capturar4.JPG">
 
 
-#### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
-    a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
-    b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 
-#### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
+#### 9.6	CONSULTAS COM INNER JOIN E ORDER BY <br>
+
+    a) junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
+	/pedidos do cliente 2248/
+SELECT * from encomenda 
+ join cliente on (encomenda.cod_cliente = cliente.cod_cliente)
+ where encomenda.cod_cliente = 2248 order by cod_encomenda;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/inner%20join%2C%20order%20by/Capturar.JPG">
+
+
+  	/descriação da entrega do entregador 2249/
+select  encomenda.cod_encomenda,encomenda.descricao from entregador
+join entrega on (entregador.cod_entregador = entrega.cod_entregador)
+join encomenda on (entrega.cod_encomenda = encomenda.cod_encomenda)
+where entregador.cod_entregador = 2249
+order by entregador.cod_entregador;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/inner%20join%2C%20order%20by/Capturar02.JPG">
+
+
+	/* loja que a cliente Fernanda comprou*/
+select encomenda.cod_encomenda,lojista.nomefantasia, cliente.nome from cliente 
+join encomenda on (cliente.cod_cliente = encomenda.cod_cliente)
+join lojista on (encomenda.id_lojista = lojista.id_lojista) 
+where cliente.nome ilike 'Fernanda%' ;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/inner%20join%2C%20order%20by/Capturar03.JPG">
+
+
+	/* nome do cliente que comprou mesa de canto*/
+select encomenda.cod_encomenda,encomenda.descricao,cliente.nome from encomenda
+join cliente on (encomenda.cod_cliente = cliente.cod_cliente)
+where encomenda.descricao like "%mesa de canto%";
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/inner%20join%2C%20order%20by/Capturar04.JPG">
+
+
+	/*apresentar bairros e tipos de produtos*/
+select encomenda.cod_encomenda,bairro,encomenda.nomeprod from encomenda
+join endereco on (encomenda.id_endereco = endereco.id_endereco) 
+order by encomenda.cod_encomenda;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/inner%20join%2C%20order%20by/Capturar05.JPG">
+    
+
+#### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO <br>
+    
     a) Criar minimo 2 envolvendo algum tipo de junção
 
-#### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-    a) Criar minimo 1 de cada tipo
+	/*consulta pessoa e seu cpf*/
+  SELECT nomefantasia, CNPJ FROM lojista GROUP BY nomefantasia, CNPJ;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/group%20by%20e%20agrupamento/Capturar.JPG">
 
-#### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-        a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
-        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+	/*consulta cep e nome da rua*/
+SELECT CEP, loragradouro FROM ENDERECO GROUP BY CEP, loragradouro;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/group%20by%20e%20agrupamento/Capturar02.JPG">
 
-#### 9.10	SUBCONSULTAS (Mínimo 4)<br>
-     a) Criar minimo 1 envolvendo GROUP BY
-     b) Criar minimo 1 envolvendo algum tipo de junção
+	/*conta a quantidade de encomenda por loja*/
+SELECT encomenda.id_lojista, lojista.nomefantasia, count(encomenda.id_lojista) as qtd_encomendas
+FROM encomenda INNER JOIN lojista ON encomenda.id_lojista = lojista.id_lojista  GROUP BY encomenda.id_lojista, lojista.nomefantasia ;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/group%20by%20e%20agrupamento/Capturar03.JPG">
+
+	/*conta a quantidade de encomenda por cliente*/
+SELECT encomenda.cod_cliente, cliente.nome, count(encomenda.cod_cliente) as qtd_pedidos FROM encomenda INNER JOIN cliente ON encomenda.cod_cliente = cliente.cod_cliente  GROUP BY encomenda.cod_cliente, cliente.nome ;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/group%20by%20e%20agrupamento/Capturar04.JPG">
+  
+	/*conta a quantidade de endereços por area*/
+SELECT  endereco.id_area, area_geografica.nome, count(endereco.id_endereco) as qt_bairros FROM endereco INNER JOIN area_geografica ON  endereco.id_area = area_geografica.id_area  GROUP BY endereco.id_area, area_geografica.nome ;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/group%20by%20e%20agrupamento/Capturar05.JPG">
+  
+    
+    
+
+#### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN <br>
+
+ /* cliente que comprou qual produto */
+select encomenda.nomeprod as produto, cliente.nome AS comprador from encomenda 
+right join cliente on (encomenda.cod_cliente=cliente.cod_cliente);
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/left%2C%20right%2C%20full/Capturar01.JPG">
+  
+
+/* loja resposanvel por cada produto*/
+select encomenda.descricao as produto, lojista.nomefantasia AS Loja from encomenda 
+right join lojista on (encomenda.id_lojista=lojista.id_lojista);
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/left%2C%20right%2C%20full/Capturar02.JPG">
+  
+
+/* bairro e sua area geografica*/
+select  endereco.bairro, area_geografica.id_area from endereco
+left join area_geografica on (endereco.id_Area=area_geografica.id_area)
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/left%2C%20right%2C%20full/Capturar03.JPG">
+  
+
+/* loja em cada bairro*/
+select lojista.nomefantasia, endereco.id_endereco, lojista.nome_resp
+from endereco full outer join lojista
+on (lojista.id_endereco = endereco.id_endereco);
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/left%2C%20right%2C%20full/Capturar04.JPG">
+  
+
+
+#### 9.9	CONSULTAS COM SELF JOIN E VIEW <br>
+    As consultas com self join não condizem com a tabela de dados do projeto, pois não possuem entidades auto relacionadas no caso. Por isso foi feita uma view para complementar a questão:
+    
+	/*View que sintetiza a tabela de encomenda*/
+    create view pedido as select nomeprod as tipo, descricao as descrição, data_entrega as cadastro  from encomenda; select *from pedido"
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/select*from/view.JPG">
+  
+#### 9.10	SUBCONSULTAS <br>
+
+	/*relação entregador, area geografica e o bairro*/
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/text.JPG">
+
+	/*relação loja, área geografica e cliente*/
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/text.JPG">
+
+	/*relação bairro, cliente e data de encomenda*/
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/text.JPG">
+
+	/*relação nome fantasia, dia da encomenda e qual entregador vai entregar*/
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/text.JPG">
+
 
 ### 10 RELATÓRIOS E GRÁFICOS
 
