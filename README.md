@@ -458,6 +458,8 @@ SELECT  endereco.id_area, area_geografica.nome, count(endereco.id_endereco) as q
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/group%20by%20e%20agrupamento/Capturar05.JPG">
   
     
+  
+    
     
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN <br>
