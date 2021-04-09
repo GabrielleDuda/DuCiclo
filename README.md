@@ -548,19 +548,20 @@ on (lojista.id_endereco = endereco.id_endereco);
 
 ### 10 RELATÓRIOS E GRÁFICOS
 
-#### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
+### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
 
-#### b) link com exemplo de relatórios será disponiblizado pelo professor no AVA
-#### OBS: Esta é uma atividade de grande relevância no contexto do trabalho. Mantenha o foco nos 5 principais relatórios/resultados visando obter o melhor resultado possível.
-
+![Apresentação dos relatórios]
+(https://colab.research.google.com/drive/1zY9l7elOsnLhMtn97cIP0SM2kzk4wQNO?usp=sharing)
     
 
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
 
 #### a) Modelo (pecha kucha)<br>
+https://github.com/GabrielleDuda/DuCiclo/blob/main/arquivos/Modelo%20(pecha%20kucha)%20-%20DuCiclo.pdf
+
 #### b) Tempo de apresentação 6:40 
 
-># Marco de Entrega 03: Itens 10 e 11<br>
+
 <br>
 <br>
 <br> 
