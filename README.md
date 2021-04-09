@@ -498,21 +498,56 @@ on (lojista.id_endereco = endereco.id_endereco);
 #### 9.10	SUBCONSULTAS <br>
 
 	/*relação entregador, area geografica e o bairro*/
-<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/text.JPG">
-
+>>SELECT lojista.nomefantasia,area_geografica.nome as area,entregadu.nome,area_geografica.bairro from encomenda 
+	join endereco on (encomenda.id_endereco = endereco.id_endereco)
+	join lojista on (encomenda.id_lojista = lojista.id_lojista) 
+	join area_geografica on (area_geografica.id_area = endereco.id_area )
+	join entrega on (encomenda.cod_encomenda = entrega.cod_encomenda)
+	join entregadu on ( entregadu.cod_entregador = entrega.cod_entregador)
+		order by lojista.nomefantasia;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/Capturar01.JPG">
+		
 	/*relação loja, área geografica e cliente*/
-<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/text.JPG">
+>>SELECT lojista.nomefantasia,cliente.nome,area_geografica.nome from encomenda 
+	join cliente on (encomenda.cod_cliente = cliente.cod_cliente)
+	join endereco on (encomenda.id_endereco = endereco.id_endereco)
+	join lojista on (encomenda.id_lojista = lojista.id_lojista) 
+	join area_geografica on (area_geografica.id_area = endereco.id_area )
+		order by lojista.nomefantasia;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/Capturar02.JPG">
+
 
 	/*relação bairro, cliente e data de encomenda*/
-<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/text.JPG">
+>> SELECT encomenda.data_entrega,cliente.nome,endereco.bairro from encomenda 
+	join cliente on (encomenda.cod_cliente = cliente.cod_cliente)
+ 	join endereco on (encomenda.id_endereco = endereco.id_endereco) 
+		order by cod_encomenda;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/Capturar03.JPG">
+
 
 	/*relação nome fantasia, dia da encomenda e qual entregador vai entregar*/
-<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/text.JPG">
+>>Select  encomenda.data_entrega,encomenda.descricao,lojista.nomefantasia,entregador.nome from entregador
+	join entrega on (entregador.cod_entregador = entrega.cod_entregador)
+	join encomenda on (entrega.cod_encomenda = encomenda.cod_encomenda)
+	join lojista on (encomenda.id_lojista = lojista.id_lojista) 
+		order by entregador.cod_entregador;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/Capturar04.JPG">
+
+
+	/* area, entregador*/
+>>SELECT lojista.nomefantasia,cliente.nome,area_geografica.nome from encomenda 
+ 	join cliente on (encomenda.cod_cliente = cliente.cod_cliente)
+ 	join endereco on (encomenda.id_endereco = endereco.id_endereco)
+ 	join lojista on (encomenda.id_lojista = lojista.id_lojista) 
+	join area_geografica on (area_geografica.id_area = endereco.id_area )
+		order by lojista.nomefantasia;
+<img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/Capturar05.JPG">
 
 
 ### 10 RELATÓRIOS E GRÁFICOS
 
 #### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
+
 #### b) link com exemplo de relatórios será disponiblizado pelo professor no AVA
 #### OBS: Esta é uma atividade de grande relevância no contexto do trabalho. Mantenha o foco nos 5 principais relatórios/resultados visando obter o melhor resultado possível.
 
