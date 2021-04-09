@@ -500,13 +500,13 @@ on (lojista.id_endereco = endereco.id_endereco);
 #### 9.10	SUBCONSULTAS <br>
 
 	/*relação entregador, area geografica e o bairro*/
->>SELECT lojista.nomefantasia,area_geografica.nome as area,entregadu.nome,area_geografica.bairro from encomenda 
-	join endereco on (encomenda.id_endereco = endereco.id_endereco)
-	join lojista on (encomenda.id_lojista = lojista.id_lojista) 
-	join area_geografica on (area_geografica.id_area = endereco.id_area )
-	join entrega on (encomenda.cod_encomenda = entrega.cod_encomenda)
-	join entregadu on ( entregadu.cod_entregador = entrega.cod_entregador)
-		order by lojista.nomefantasia;
+>>select entregador.nome, area_geografica.id_area, escolhe.id_area
+	from entregador
+	inner join escolhe on
+	(entregador.cod_entregador=escolhe.cod_entregador)
+	inner join area_geografica on
+	(escolhe.id_Area=area_geografica.id_area)
+	group by area_geografica.nome, entregador.nome, area_geografica.id_area,  escolhe.id_area;
 <img src="https://github.com/GabrielleDuda/DuCiclo/blob/main/imagens/screeenshot/subconsulta/Capturar01.JPG">
 		
 	/*relação loja, área geografica e cliente*/
